@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 const Home = () => {
 	return (
 		<motion.div className="home container" animate={{}}>
-			<motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1, scale: 2 }}>
+			<motion.h2
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1, scale: 2 }}
+				transition={{ delay: 1, duration: 4 }}
+			>
 				Welcome to Pizza Joint
 			</motion.h2>
 			<Link to="/base">
