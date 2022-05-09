@@ -26,7 +26,15 @@ const Base = ({ addBase, pizza }) => {
 					className="next"
 				>
 					<Link to="/toppings">
-						<button>Next</button>
+						<button
+							whileHover={{
+								scale: 1.1,
+								textShadow: "0px 0px 8px rgb(255, 255, 255)",
+								boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+							}}
+						>
+							Next
+						</button>
 					</Link>
 				</motion.div>
 			)}
