@@ -15,6 +15,16 @@ const Base = ({ addBase, pizza }) => {
 		},
 	};
 
+	const nextVariants = {
+		hidden: {
+			x: "100vw",
+		},
+		visible: {
+			x: 0,
+			transition: { type: "spring", stiffness: "150", delay: 1 },
+		},
+	};
+
 	const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
 
 	return (
@@ -46,7 +56,7 @@ const Base = ({ addBase, pizza }) => {
 			</ul>
 
 			{pizza.base && (
-				<div className="next">
+				<div className="next" variants={nextVariants}>
 					<Link to="/toppings">
 						<motion.button
 							whileHover={{
