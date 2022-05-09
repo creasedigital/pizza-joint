@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
+
 const Header = () => {
 	return (
-		<header>
+		<motion.header initial={{ y: -250 }} animate={{ y: 0 }}>
 			<div className="logo">Pizza J...</div>
-		</header>
+		</motion.header>
 	);
 };
 
