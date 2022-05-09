@@ -21,7 +21,12 @@ const Toppings = ({ addTopping, pizza }) => {
 						<motion.li
 							key={topping}
 							onClick={() => addTopping(topping)}
-							whileHover={{ scale: 1.3, color: "#f8e00a" }}
+							whileHover={{
+								originX: 0,
+								scale: 1.4,
+								color: "#f8e00a",
+							}}
+							transition={{ type: "spring", stiffness: "150" }}
 						>
 							<span className={spanClass}>{topping}</span>
 						</motion.li>
