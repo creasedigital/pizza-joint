@@ -28,7 +28,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<AnimatePresence>
+			<AnimatePresence exitBeforeEnter>
 				<Routes location={location} key={location.key}>
 					<Route path="/" element={<Home />} />
 
