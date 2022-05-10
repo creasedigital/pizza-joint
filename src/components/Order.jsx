@@ -10,7 +10,13 @@ const Order = ({ pizza }) => {
 		visible: {
 			opacity: 1,
 			x: 0,
-			transition: { type: "spring", delay: 0.5, when: "beforeChildren" },
+			transition: {
+				type: "spring",
+				mass: 0.4,
+				damping: 8,
+				when: "beforeChildren",
+				staggerChildren: 0.8,
+			},
 		},
 	};
 	const childVariants = {
