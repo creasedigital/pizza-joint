@@ -1,33 +1,40 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+const containerVariants = {
+	hidden: {
+		opacity: 0,
+		x: "-100vw",
+	},
+
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			type: "spring",
+			mass: 0.4,
+			damping: 8,
+			when: "beforeChildren",
+			staggerChildren: 0.8,
+		},
+	},
+};
+const childVariants = {
+	hidden: {
+		opacity: 0,
+	},
+
+	visible: {
+		opacity: 1,
+	},
+};
 
 const Order = ({ pizza }) => {
-	const containerVariants = {
-		hidden: {
-			opacity: 0,
-			x: "-100vw",
-		},
+	const [showTitle, setShowTitle] = useState(true);
 
-		visible: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				type: "spring",
-				mass: 0.4,
-				damping: 8,
-				when: "beforeChildren",
-				staggerChildren: 0.8,
-			},
-		},
-	};
-	const childVariants = {
-		hidden: {
-			opacity: 0,
-		},
-
-		visible: {
-			opacity: 1,
-		},
-	};
+	setTimeout(() => {
+		setShowTitle(false);
+	}, 4000);
 
 	return (
 		<motion.div
@@ -36,7 +43,7 @@ const Order = ({ pizza }) => {
 			initial="hidden"
 			animate="visible"
 		>
-			<h2>Thank you for your order 😊</h2>
+			{showTitle && <motion.h2>Thank you for your order 😊</motion.h2>}
 			<motion.p variants={childVariants}>
 				You ordered a {pizza.base} pizza with:
 			</motion.p>
