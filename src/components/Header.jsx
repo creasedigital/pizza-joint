@@ -10,7 +10,14 @@ const Header = () => {
 				transition={{ delay: 0.4, type: "spring", stiffness: "150" }}
 			>
 				<Link to="/">
-					<div className="logo">Pizza J...</div>
+					<motion.div
+						className="logo"
+						drag
+						dragConstraints={{ left: 50, top: 100, right: 20, bottom: 0 }}
+						dragElastic={5}
+					>
+						Pizza J...
+					</motion.div>
 				</Link>
 			</motion.header>
 		</>
