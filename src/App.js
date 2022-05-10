@@ -8,8 +8,9 @@ import Order from "./components/Order";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-	const [pizza, setPizza] = useState({ base: "", toppings: [] });
 	const location = useLocation();
+	const [pizza, setPizza] = useState({ base: "", toppings: [] });
+	const [showModal, setShowModal] = useState(true);
 
 	const addBase = (base) => {
 		setPizza({ ...pizza, base });
