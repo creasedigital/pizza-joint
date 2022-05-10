@@ -6,12 +6,14 @@ const loaderVariants = {
 		y: [0, -30],
 		transition: {
 			x: {
-				yoyo: infinity,
+				yoyo: Infinity,
 				duration: 0.5,
+				ease: "easeInOut",
 			},
 			y: {
-				yoyo: infinity,
+				yoyo: Infinity,
 				duration: 0.25,
+				ease: "easeInOut",
 			},
 		},
 	},
@@ -23,7 +25,7 @@ const Loader = () => {
 			<motion.div
 				className="loader"
 				variants={loaderVariants}
-				animate="animateOne"
+				animate="animationOne"
 			></motion.div>
 		</>
 	);
