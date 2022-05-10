@@ -31,10 +31,13 @@ function App() {
 		<>
 			<Header />
 			<Modal showModal={showModal} setShowModal={setShowModal} />
-			<AnimatePresence exitBeforeEnter>
+			{/*onExitComplete triggers exit animation upon changing routes*/}
+			<AnimatePresence
+				exitBeforeEnter
+				onExitComplete={() => setShowModal(false)}
+			>
 				<Routes location={location} key={location.key}>
 					<Route path="/" element={<Home />} />
-
 					<Route
 						path="base"
 						element={<Base addBase={addBase} pizza={pizza} />}
