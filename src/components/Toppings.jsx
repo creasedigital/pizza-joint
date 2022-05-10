@@ -15,6 +15,24 @@ const Toppings = ({ addTopping, pizza }) => {
 		},
 	};
 
+	const buttonVariants = {
+		// visible: {
+		// 	x: [0, -20, 20, -20, 20, 0],
+		// 	transition: { delay: 2 },
+		// },
+		hover: {
+			// scale: [1, 1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1],
+			// yoyo is more suited for repeated animations
+			scale: 1.1,
+			textShadow: "0px 0px 8px rgb(255, 255, 255)",
+			boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+			transition: {
+				yoyo: 10,
+				// yoyo: infinity
+			},
+		},
+	};
+
 	let toppings = [
 		"mushrooms",
 		"peppers",
@@ -53,15 +71,7 @@ const Toppings = ({ addTopping, pizza }) => {
 			</ul>
 
 			<Link to="/order">
-				<motion.button
-					whileHover={{
-						scale: 1.1,
-						textShadow: "0px 0px 8px rgb(255, 255, 255)",
-						boxShadow: "0px 0px 8px rgb(255, 255, 255)",
-					}}
-				>
-					Order
-				</motion.button>
+				<motion.button whileHover="hover">Order</motion.button>
 			</Link>
 		</motion.div>
 	);

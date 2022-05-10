@@ -15,6 +15,24 @@ const Base = ({ addBase, pizza }) => {
 		},
 	};
 
+	const buttonVariants = {
+		// visible: {
+		// 	x: [0, -20, 20, -20, 20, 0],
+		// 	transition: { delay: 2 },
+		// },
+		hover: {
+			// scale: [1, 1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1],
+			// yoyo is more suited for repeated animations
+			scale: 1.1,
+			textShadow: "0px 0px 8px rgb(255, 255, 255)",
+			boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+			transition: {
+				yoyo: 10,
+				// yoyo: infinity
+			},
+		},
+	};
+
 	const nextVariants = {
 		hidden: {
 			x: "100vw",
@@ -59,11 +77,8 @@ const Base = ({ addBase, pizza }) => {
 				<div className="next" variants={nextVariants}>
 					<Link to="/toppings">
 						<motion.button
-							whileHover={{
-								scale: 1.1,
-								textShadow: "0px 0px 8px rgb(255, 255, 255)",
-								boxShadow: "0px 0px 8px rgb(255, 255, 255)",
-							}}
+							variants={buttonVariants}
+							whileHover='hover'
 						>
 							Next
 						</motion.button>
